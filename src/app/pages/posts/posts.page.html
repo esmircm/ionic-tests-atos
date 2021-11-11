@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Posts
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-item>
+    <ion-label>Users</ion-label>
+    <ion-select interface="popover"
+      (ionChange)="getPostsByUser($event)">
+      <ion-select-option *ngFor="let user of users" value="{{ user.id }}">
+        {{ user.username }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-header>
+
+<ion-content>
+
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div *ngFor="let post of posts">
+    <app-post (click)="viewPostDetail(post)" (edit)="editPost(post)" [post]="post" showEdit="true"></app-post>
+  </div>
+
+  <ion-fab (click)="createPost()" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

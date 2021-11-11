@@ -1,0 +1,7 @@
+{
+  "name": "ionic-test-atos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

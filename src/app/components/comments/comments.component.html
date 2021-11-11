@@ -1,0 +1,19 @@
+<ion-list>
+
+  <ion-list-header><h3>Comments</h3></ion-list-header>
+
+  <ion-item *ngFor="let comment of comments">
+
+    <ion-avatar slot="end">
+      <img src="/assets/avatar.svg">
+    </ion-avatar>
+
+    <ion-label>
+      <h3>{{comment.email}}</h3>
+      <p>{{comment.name}}</p>
+      <p>{{comment.body}}</p>
+    </ion-label>
+
+  </ion-item>
+
+</ion-list>

@@ -1,0 +1,22 @@
+<ion-list *ngIf="user">
+
+  <ion-list-header>
+    <h3>Author</h3>
+  </ion-list-header>
+
+  <ion-item>
+
+    <ion-avatar slot="start">
+      <img src="/assets/avatar-yoda.png">
+    </ion-avatar>
+
+    <ion-label>
+      <h2>{{user.username}}</h2>
+      <h3>{{user.email}}</h3>
+      <h3>{{user.company.name}}</h3>
+      <p>{{user.company.bs}}</p>
+    </ion-label>
+    
+  </ion-item>
+
+</ion-list>

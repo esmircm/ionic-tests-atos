@@ -1,0 +1,35 @@
+<ion-toolbar color="primary">
+  <ion-title>
+    {{ titleModal }}
+  </ion-title>
+  <ion-buttons slot="end">
+    <ion-button (click)="modalController.dismiss()">
+      <ion-icon name="close"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content>
+
+  <form [formGroup]="formPost">
+
+    <ion-item lines="full">
+      <ion-label position="floating">Title</ion-label>
+      <ion-input type="text" formControlName="title" name="title" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Body</ion-label>
+      <ion-textarea rows="8" type="text" formControlName="body" name="body" required>
+      </ion-textarea>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button [disabled]="!formPost.valid" color="success" expand="block" (click)="savePost()">Save</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </form>
+
+</ion-content>
